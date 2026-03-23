@@ -6,15 +6,13 @@ from pypdf import PdfReader
 from autogen_agentchat.agents import AssistantAgent
 from autogen_agentchat.teams import RoundRobinGroupChat
 from autogen_ext.models.openai import OpenAIChatCompletionClient
-from autogen_agentchat.messages import TextMessage
-from dotenv import load_dotenv
 
-load_dotenv()
+api_key = st.secrets["OPENROUTER_API_KEY"]
 
 model_client = OpenAIChatCompletionClient(
     base_url="https://openrouter.ai/api/v1",
     model="stepfun/step-3.5-flash:free",
-    api_key = "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",
+    api_key = api_key,
     model_info={
         "family":'stepfun',
         "vision" :True,
@@ -22,6 +20,8 @@ model_client = OpenAIChatCompletionClient(
         "json_output": False
     }
 )
+
+st.write("Key loaded:", bool(st.secrets.get("OPENROUTER_API_KEY")))
 
 # ---------------------------
 # PDF TEXT EXTRACTION
