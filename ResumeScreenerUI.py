@@ -15,7 +15,7 @@ api_key = os.getenv('OPENAI_API_KEY')
 model_client = OpenAIChatCompletionClient(
     base_url="https://openrouter.ai/api/v1",
     model="stepfun/step-3.5-flash:free",
-    api_key = "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",
+    api_key = "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",
     model_info={
         "family":'stepfun',
         "vision" :True,
