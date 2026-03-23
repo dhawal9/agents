@@ -15,7 +15,7 @@ api_key = os.getenv('OPENAI_API_KEY')
 model_client = OpenAIChatCompletionClient(
     base_url="https://openrouter.ai/api/v1",
     model="stepfun/step-3.5-flash:free",
-    api_key = "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",
+    api_key = "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",
     model_info={
         "family":'stepfun',
         "vision" :True,
@@ -197,7 +197,7 @@ def run_agents_sync(groupchat, jd, resume_text):
 # ---------------------------
 st.set_page_config(page_title="AI Resume Screener", layout="wide")
 
-st.title("📄 AI Resume Screening System")
+st.title("📄 Resume Screening System")
 
 # Job Description input
 jd = st.text_area(
