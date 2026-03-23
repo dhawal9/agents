@@ -7,12 +7,12 @@ from autogen_agentchat.agents import AssistantAgent
 from autogen_agentchat.teams import RoundRobinGroupChat
 from autogen_ext.models.openai import OpenAIChatCompletionClient
 
-api_key = st.secrets["OPENROUTER_API_KEY"]
+# api_key = st.secrets["OPENROUTER_API_KEY"]
 
 model_client = OpenAIChatCompletionClient(
     base_url="https://openrouter.ai/api/v1",
     model="stepfun/step-3.5-flash:free",
-    api_key = api_key,
+    api_key = "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",
     model_info={
         "family":'stepfun',
         "vision" :True,
@@ -21,7 +21,7 @@ model_client = OpenAIChatCompletionClient(
     }
 )
 
-st.write("Key loaded:", bool(st.secrets.get("OPENROUTER_API_KEY")))
+# st.write("Key loaded:", bool(st.secrets.get("OPENROUTER_API_KEY")))
 
 # ---------------------------
 # PDF TEXT EXTRACTION
