@@ -10,7 +10,6 @@ from autogen_agentchat.messages import TextMessage
 from dotenv import load_dotenv
 
 load_dotenv()
-api_key = os.getenv('OPENAI_API_KEY')
 
 model_client = OpenAIChatCompletionClient(
     base_url="https://openrouter.ai/api/v1",
