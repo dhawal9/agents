@@ -14,3 +14,7 @@ An intelligent resume screening system that automates candidate evaluation using
 - Frontend: Streamlit 
 - AI/ML: AutoGen
 - Deployment: Streamlit Cloud
+
+![image_alt](https://github.com/dhawal9/agents/blob/532a33d679b16b14cc5769e871574466268bc0b4/screenshots/Analysis.png)
+
+![image_alt](https://github.com/dhawal9/agents/blob/f56b5e2ea16a5b5be09cc9484cdb166cab609ebe/screenshots/Results.png)
