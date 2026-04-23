@@ -11,10 +11,10 @@ from autogen_ext.models.openai import OpenAIChatCompletionClient
 
 model_client = OpenAIChatCompletionClient(
     base_url="https://openrouter.ai/api/v1",
-    model="stepfun/step-3.5-flash:free",
+    model="nvidia/nemotron-3-super-120b-a12b:free",
     api_key = "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",
     model_info={
-        "family":'stepfun',
+        "family":'nvidia',
         "vision" :True,
         "function_calling":True,
         "json_output": False
