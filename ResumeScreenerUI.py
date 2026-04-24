@@ -11,7 +11,7 @@ from autogen_ext.models.openai import OpenAIChatCompletionClient
 
 model_client = OpenAIChatCompletionClient(
     model="gpt-4o-mini",
-    api_key = "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",
+    api_key = "sk-proj-***",
     model_info={
         "family": "gpt-4",
         "vision": True,
