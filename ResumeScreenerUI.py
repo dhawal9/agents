@@ -11,7 +11,7 @@ from autogen_ext.models.openai import OpenAIChatCompletionClient
 
 model_client = OpenAIChatCompletionClient(
     base_url="https://openrouter.ai/api/v1",
-    model="nvidia/nemotron-3-super-120b-a12b:free",
+    model="nvidia/nemotron-3-nano-30b-a3b:free",
     api_key = "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",
     model_info={
         "family":'unknown',
