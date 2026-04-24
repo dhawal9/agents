@@ -10,15 +10,14 @@ from autogen_ext.models.openai import OpenAIChatCompletionClient
 # api_key = st.secrets["OPENROUTER_API_KEY"]
 
 model_client = OpenAIChatCompletionClient(
-    base_url="https://openrouter.ai/api/v1",
-    model="nvidia/nemotron-3-nano-30b-a3b:free",
-    api_key = "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",
+    model="gpt-4o-mini",
+    api_key = "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",
     model_info={
-        "family":'unknown',
-        "vision" :False,
-        "function_calling":True,
-        "json_output": False,
-        "structured_output": False,
+        "family": "gpt-4",
+        "vision": True,
+        "function_calling": True,
+        "json_output": True,
+        "structured_output": True,
     }
 )
 
