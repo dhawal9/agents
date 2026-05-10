@@ -14,7 +14,7 @@ from autogen_ext.models.openai import OpenAIChatCompletionClient
 
 
 model_client = OpenAIChatCompletionClient(
-    model="gpt-4o-mini",
+    model="gpt-4o",
     api_key=st.secrets["OPENAI_API_KEY"],
     model_info={
         "family": "gpt-4",
@@ -431,6 +431,7 @@ Important:
 
 Output MUST be valid JSON only:
 {
+  "candidate_name": null,
   "years_of_experience": null,
   "python_calculated_experience_years": null,
   "explicit_experience_mentioned": null,
@@ -474,6 +475,18 @@ Output MUST be valid JSON only:
   ],
   "summary": ""
 }
+
+Candidate Name Rules:
+- Extract the candidate's full name from the resume.
+- The name is usually in the top section/header of the resume.
+- Prefer text near email, phone number, LinkedIn, GitHub, or address.
+- Do not return generic values like "Candidate", "Resume", "CV", "Profile", or "Curriculum Vitae".
+- Do not return job titles like "Java Developer", "Software Engineer", "Backend Developer".
+- Do not return company names.
+- Do not return email addresses or phone numbers.
+- Preserve the name as written in the resume.
+- If the name is not clearly available, return null.
+- Never return "Candidate" as candidate_name.
 
 Experience Rules:
 - years_of_experience must be equal to python_calculated_experience_years if provided.
@@ -913,7 +926,7 @@ if st.button("Analyze Candidate", type="primary"):
 
         col5, col6, col7, col8 = st.columns(4)
 
-        col5.metric("Python Calculated Experience", f"{experience} yrs")
+        col5.metric("Experience", f"{experience} yrs")
         col6.metric("Matched Skills", len(matched_skills))
         col7.metric("Missing Required", len(missing_required))
         col8.metric("Missing Preferred", len(missing_preferred))
