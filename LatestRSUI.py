@@ -15,7 +15,7 @@ from autogen_ext.models.openai import OpenAIChatCompletionClient
 
 model_client = OpenAIChatCompletionClient(
     model="gpt-4o",
-    api_key=st.secrets["OPENAI_API_KEY"],
+    api_key=st.secrets["OPENAI_API_KEY"],    
     model_info={
         "family": "gpt-4",
         "vision": True,
@@ -859,12 +859,14 @@ st.set_page_config(
 )
 
 st.title("📄 AI Resume Screening Dashboard")
-st.caption("Evidence-based resume screening with deterministic Python experience calculation.")
 
 jd = st.text_area(
     "Enter Job Description",
     height=220,
-    placeholder="Example: Java developer with Spring Boot, Kafka, SQL, cloud experience..."
+    placeholder="""Example: 
+    "Must have skills: Java, Spring Boot, Microservices..
+    "Good to have skills: Kafka, SQL, cloud experience...
+    "Minimum required experience: 5 years..."""
 )
 
 uploaded_file = st.file_uploader(
